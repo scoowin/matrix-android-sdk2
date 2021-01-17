@@ -21,12 +21,13 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url "https://gitlab.matrix.org/matrix-org/olm"
+        }
         // For olm library. This has to be declared first, to ensure that Olm library is not downloaded from another repo
         maven {
             url 'https://jitpack.io'
             content {
-                // Use this repo only for olm library
-                includeGroupByRegex "org\\.matrix\\.gitlab\\.matrix-org"
                 // And monarchy
                 includeGroupByRegex "com\\.github\\.Zhuinden"
             }
